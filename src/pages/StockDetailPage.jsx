@@ -45,8 +45,7 @@ export const StockDetailPage = () => {
         to: currentTime,
         resolution: 30
       }
-      
-    }),
+      }),
     finnhub.get("/stock/candle", {
       params: {
         symbol,
@@ -54,9 +53,9 @@ export const StockDetailPage = () => {
         to: currentTime,
         resolution: 60
       }
-      
-    }),
-    finnhub.get("/stock/candle", {
+      }),
+    
+      finnhub.get("/stock/candle", {
       params: {
         symbol,
         from: oneYear,
@@ -78,12 +77,10 @@ export const StockDetailPage = () => {
     console.log(err)
    }
    
-     
-  
-    
-  }
+     }
   fetchData()
   }, [symbol])
+  
   return<div>
     {chartData && (
       <div>
